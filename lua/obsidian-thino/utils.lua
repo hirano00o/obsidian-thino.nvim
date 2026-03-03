@@ -52,17 +52,4 @@ M.validate_recursive = function(schema, config, path)
   end
 end
 
---- Return the symbol string associated with the given itemize key from enum_table.
---- @param itemize string Itemize key (e.g. "list" or "task")
---- @param enum_table table Enum table mapping keys to symbol strings
---- @return string
-M.get_itemize_symbol = function(itemize, enum_table)
-  for key, value in pairs(vim.tbl_get(enum_table)) do
-    if key == itemize then
-      return value
-    end
-  end
-  return ""
-end
-
 return M
