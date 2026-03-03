@@ -177,6 +177,8 @@ local function submit_post(buf, win, daily_note_path)
   end)
 end
 
+--- Open a floating input window and append the entered text to today's daily note.
+--- Keymaps: <C-CR> to submit, q to cancel.
 M.post = function()
   local path = lazy.require("obsidian-thino.obsidian").get_daily_note_path()
   if not path then

@@ -66,6 +66,8 @@ M.defaults = {
 
 M.options = {}
 
+--- Return the itemize symbol string for the current itemize option.
+--- @return string
 M.get_itemize_symbol = function()
   return M.schema.itemize.enum[M.options.itemize]
 end

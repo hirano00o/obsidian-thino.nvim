@@ -14,6 +14,9 @@ local function get_obsidian_client()
   return client, nil
 end
 
+--- Return the file path of today's daily note via the obsidian.nvim client.
+--- Returns nil and emits an error notification if obsidian.nvim is unavailable.
+--- @return string|nil
 M.get_daily_note_path = function()
   local client, err = get_obsidian_client()
   if not client then

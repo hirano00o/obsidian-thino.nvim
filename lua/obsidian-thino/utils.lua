@@ -27,6 +27,11 @@ local function validate_item(rule, value, path)
   end
 end
 
+--- Recursively validate config values against the given schema.
+--- Raises an error if any value has the wrong type, is outside its enum, or violates min/max.
+--- @param schema table Schema definition table
+--- @param config table Config values to validate
+--- @param path? string Dot-separated key path used in error messages (default: "")
 M.validate_recursive = function(schema, config, path)
   path = path or ""
 
@@ -47,6 +52,10 @@ M.validate_recursive = function(schema, config, path)
   end
 end
 
+--- Return the symbol string associated with the given itemize key from enum_table.
+--- @param itemize string Itemize key (e.g. "list" or "task")
+--- @param enum_table table Enum table mapping keys to symbol strings
+--- @return string
 M.get_itemize_symbol = function(itemize, enum_table)
   for key, value in pairs(vim.tbl_get(enum_table)) do
     if key == itemize then
