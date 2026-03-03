@@ -178,7 +178,7 @@ local function submit_post(buf, win, daily_note_path)
 end
 
 --- Open a floating input window and append the entered text to today's daily note.
---- Keymaps: <C-CR> to submit, q to cancel.
+--- Keymaps: <C-CR> or <C-s> to submit, q to cancel.
 M.post = function()
   local path = lazy.require("obsidian-thino.obsidian").get_daily_note_path()
   if not path then
@@ -193,6 +193,7 @@ M.post = function()
 
   -- Submit: Ctrl+Enter (works in both normal and insert mode)
   vim.keymap.set({ "n", "i" }, "<C-CR>", function() submit_post(buf, win, path) end, opts)
+  vim.keymap.set({ "n", "i" }, "<C-s>", function() submit_post(buf, win, path) end, opts)
 
   -- Cancel: q (normal mode only)
   vim.keymap.set("n", "q", function() close_window(win) end, opts)

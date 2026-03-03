@@ -6,6 +6,8 @@
 
 Thino は Obsidian のプラグインで、タイムスタンプ付きのクイックメモを記録できます。このプラグインは同じ体験を Neovim 上で実現します。フローティングウィンドウを開いてメモを入力し、ポストすれば今日のデイリーノートに自動でタイムスタンプ付きで書き込まれます。エディタを離れる必要はありません。
 
+![post to the daily note](https://github.com/user-attachments/assets/8f7e23c9-dc02-4afd-9937-e049499c94c9)
+
 ## 要件
 
 - Neovim >= 0.10.0
@@ -58,6 +60,7 @@ use {
 | キー | モード | 動作 |
 |------|--------|------|
 | `<C-CR>` (Ctrl+Enter) | ノーマル、インサート | メモを今日のデイリーノートに投稿 |
+| `<C-s>` (Ctrl+s) | ノーマル、インサート | 同上 |
 | `q` | ノーマル | キャンセルしてウィンドウを閉じる |
 
 ### 出力形式
@@ -92,7 +95,7 @@ require("obsidian-thino").setup({
   itemize = "list",
   popup_window = {
     border = "rounded",
-    title = "Thino (<C-CR> to post)",
+    title = "Thino (<C-CR> or <C-s> to post)",
     title_pos = "center",
     width_ratio = 0.6,
     height = 10,
@@ -107,7 +110,7 @@ require("obsidian-thino").setup({
 | `time_format` | `string` | `"%H:%M"` | タイムスタンプのフォーマット。`"%H:%M"` または `"%H:%M:%S"` が指定可能。 |
 | `itemize` | `string` | `"list"` | リストのスタイル。`"list"` は `- `、`"task"` は `- [ ] ` を先頭に付与。 |
 | `popup_window.border` | `string` | `"rounded"` | ウィンドウの枠線スタイル。`"bold"`, `"double"`, `"none"`, `"rounded"`, `"shadow"`, `"single"`, `"solid"` から選択。 |
-| `popup_window.title` | `string` | `"Thino (<C-CR> to post)"` | ウィンドウ上部に表示されるタイトル。 |
+| `popup_window.title` | `string` | `"Thino (<C-CR> or <C-s> to post)"` | ウィンドウ上部に表示されるタイトル。 |
 | `popup_window.title_pos` | `string` | `"center"` | タイトルの表示位置。`"left"`, `"center"`, `"right"` から選択。 |
 | `popup_window.width_ratio` | `number` | `0.6` | エディタ幅に対するウィンドウ幅の比率（0.1〜1.0）。 |
 | `popup_window.height` | `number` | `10` | ウィンドウの高さ（行数、1以上）。 |
