@@ -187,22 +187,15 @@ M.post = function()
 
   local buf = vim.api.nvim_create_buf(false, true)
   local win = create_input_window(buf)
-  local function submit()
-    submit_post(buf, win, path)
-  end
-
-  local function close()
-    close_window(win)
-  end
 
   -- Set up keymaps for this buffer
   local opts = { buffer = buf, noremap = true, silent = true }
 
   -- Submit: Ctrl+Enter (works in both normal and insert mode)
-  vim.keymap.set({ "n", "i" }, "<C-CR>", submit, opts)
+  vim.keymap.set({ "n", "i" }, "<C-CR>", function() submit_post(buf, win, path) end, opts)
 
   -- Cancel: q (normal mode only)
-  vim.keymap.set("n", "q", close, opts)
+  vim.keymap.set("n", "q", function() close_window(win) end, opts)
 
   -- Start in insert mode
   vim.cmd("startinsert")
