@@ -2,6 +2,8 @@
 
 A Neovim plugin that posts memos in [Thino](https://github.com/Quorafind/Obsidian-Thino) format to your daily note via [obsidian.nvim](https://github.com/epwalsh/obsidian.nvim).
 
+![post to the daily note](https://github.com/user-attachments/assets/8f7e23c9-dc02-4afd-9937-e049499c94c9)
+
 ## What is this plugin?
 
 Thino is an Obsidian plugin for capturing quick, timestamped memos. This Neovim plugin brings that same experience to Neovim: open a floating window, type your memo, and post it with a timestamp to today's daily note — all without leaving your editor.

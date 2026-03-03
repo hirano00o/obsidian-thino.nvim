@@ -6,6 +6,8 @@
 
 Thino は Obsidian のプラグインで、タイムスタンプ付きのクイックメモを記録できます。このプラグインは同じ体験を Neovim 上で実現します。フローティングウィンドウを開いてメモを入力し、ポストすれば今日のデイリーノートに自動でタイムスタンプ付きで書き込まれます。エディタを離れる必要はありません。
 
+![post to the daily note](https://github.com/user-attachments/assets/8f7e23c9-dc02-4afd-9937-e049499c94c9)
+
 ## 要件
 
 - Neovim >= 0.10.0
