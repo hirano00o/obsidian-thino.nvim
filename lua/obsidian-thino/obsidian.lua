@@ -23,6 +23,7 @@ M.get_daily_note_path = function()
     vim.notify(err, vim.log.levels.ERROR)
     return
   end
+  -- ref. https://github.com/epwalsh/obsidian.nvim/blob/14e0427bef6c55da0d63f9a313fd9941be3a2479/lua/obsidian/client.lua#L2012-L2020
   local note = client:daily(0)
   return tostring(note.path)
 end
