@@ -58,6 +58,7 @@ Opens a floating window for memo input.
 | Key | Mode | Action |
 |-----|------|--------|
 | `<C-CR>` (Ctrl+Enter) | Normal, Insert | Post the memo to today's daily note |
+| `<C-s>` (Ctrl+s) | Normal, Insert | Same as above |
 | `q` | Normal | Cancel and close the window |
 
 ### Output format
@@ -92,7 +93,7 @@ require("obsidian-thino").setup({
   itemize = "list",
   popup_window = {
     border = "rounded",
-    title = "Thino (<C-CR> to post)",
+    title = "Thino (<C-CR> or <C-s> to post)",
     title_pos = "center",
     width_ratio = 0.6,
     height = 10,
@@ -107,7 +108,7 @@ require("obsidian-thino").setup({
 | `time_format` | `string` | `"%H:%M"` | Timestamp format. Accepts `"%H:%M"` or `"%H:%M:%S"`. |
 | `itemize` | `string` | `"list"` | List style. `"list"` produces `- `, `"task"` produces `- [ ] `. |
 | `popup_window.border` | `string` | `"rounded"` | Window border style. One of `"bold"`, `"double"`, `"none"`, `"rounded"`, `"shadow"`, `"single"`, `"solid"`. |
-| `popup_window.title` | `string` | `"Thino (<C-CR> to post)"` | Title displayed at the top of the window. |
+| `popup_window.title` | `string` | `"Thino (<C-CR> or <C-s> to post)"` | Title displayed at the top of the window. |
 | `popup_window.title_pos` | `string` | `"center"` | Title position. One of `"left"`, `"center"`, `"right"`. |
 | `popup_window.width_ratio` | `number` | `0.6` | Width of the window as a ratio of the editor width (0.1–1.0). |
 | `popup_window.height` | `number` | `10` | Height of the window in lines (≥ 1). |
