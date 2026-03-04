@@ -1,6 +1,6 @@
 # obsidian-thino.nvim
 
-[obsidian.nvim](https://github.com/epwalsh/obsidian.nvim) を通じて、[Thino](https://github.com/Quorafind/Obsidian-Thino) 形式のメモをデイリーノートに投稿する Neovim プラグインです。
+[obsidian.nvim](https://github.com/obsidian-nvim/obsidian.nvim) を通じて、[Thino](https://github.com/Quorafind/Obsidian-Thino) 形式のメモをデイリーノートに投稿する Neovim プラグインです。
 
 ## このプラグインは何か
 
@@ -11,7 +11,7 @@ Thino は Obsidian のプラグインで、タイムスタンプ付きのクイ�
 ## 要件
 
 - Neovim >= 0.10.0
-- [obsidian.nvim](https://github.com/epwalsh/obsidian.nvim)
+- [obsidian.nvim](https://github.com/obsidian-nvim/obsidian.nvim)
 
 ## インストール
 
@@ -21,7 +21,7 @@ Thino は Obsidian のプラグインで、タイムスタンプ付きのクイ�
 {
   "hirano00o/obsidian-thino.nvim",
   dependencies = {
-    "epwalsh/obsidian.nvim",  -- 今日のデイリーノートのパスを取得するために必要
+    "obsidian-nvim/obsidian.nvim",  -- 今日のデイリーノートのパスを取得するために必要
   },
   opts = {},
 }
@@ -32,7 +32,7 @@ Thino は Obsidian のプラグインで、タイムスタンプ付きのクイ�
 ```lua
 use {
   "hirano00o/obsidian-thino.nvim",
-  requires = { "epwalsh/obsidian.nvim" },
+  requires = { "obsidian-nvim/obsidian.nvim" },
   config = function()
     require("obsidian-thino").setup()
   end,
@@ -43,7 +43,7 @@ use {
 
 | プラグイン | 用途 |
 |-----------|------|
-| [obsidian.nvim](https://github.com/epwalsh/obsidian.nvim) | 今日のデイリーノートのパスを解決するために使用 |
+| [obsidian.nvim](https://github.com/obsidian-nvim/obsidian.nvim) | 今日のデイリーノートのパスを解決するために使用 |
 
 ## 使い方
 

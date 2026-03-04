@@ -1,30 +1,20 @@
 local M = {}
 
-local function get_obsidian_client()
-  local ok, obsidian = pcall(require, "obsidian")
-  if not ok then
-    return nil, "obsidian.nvim is not installed"
-  end
-
-  local client_ok, client = pcall(obsidian.get_client)
-  if not client_ok or not client then
-    return nil, "obsidian.nvim client is not initialized"
-  end
-
-  return client, nil
-end
-
---- Return the file path of today's daily note via the obsidian.nvim client.
+--- Return the file path of today's daily note via obsidian.nvim.
 --- Returns nil and emits an error notification if obsidian.nvim is unavailable.
 --- @return string|nil
 M.get_daily_note_path = function()
-  local client, err = get_obsidian_client()
-  if not client then
-    vim.notify(err, vim.log.levels.ERROR)
+  local ok, daily = pcall(require, "obsidian.daily")
+  if not ok then
+    vim.notify("obsidian.nvim is not installed", vim.log.levels.ERROR)
     return
   end
-  -- ref. https://github.com/epwalsh/obsidian.nvim/blob/14e0427bef6c55da0d63f9a313fd9941be3a2479/lua/obsidian/client.lua#L2012-L2020
-  local note = client:daily(0)
+  -- ref. https://github.com/obsidian-nvim/obsidian.nvim/blob/3094a93d1022f969cc297d2d261c56f5565cb3d6/lua/obsidian/daily/init.lua#L83
+  local note = daily.today()
+  if not note or not note.path then
+    vim.notify("Failed to get today's daily note path", vim.log.levels.ERROR)
+    return
+  end
   return tostring(note.path)
 end
 

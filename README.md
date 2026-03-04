@@ -1,6 +1,6 @@
 # obsidian-thino.nvim
 
-A Neovim plugin that posts memos in [Thino](https://github.com/Quorafind/Obsidian-Thino) format to your daily note via [obsidian.nvim](https://github.com/epwalsh/obsidian.nvim).
+A Neovim plugin that posts memos in [Thino](https://github.com/Quorafind/Obsidian-Thino) format to your daily note via [obsidian.nvim](https://github.com/obsidian-nvim/obsidian.nvim).
 
 ![post to the daily note](https://github.com/user-attachments/assets/8f7e23c9-dc02-4afd-9937-e049499c94c9)
 
@@ -11,7 +11,7 @@ Thino is an Obsidian plugin for capturing quick, timestamped memos. This Neovim 
 ## Requirements
 
 - Neovim >= 0.10.0
-- [obsidian.nvim](https://github.com/epwalsh/obsidian.nvim)
+- [obsidian.nvim](https://github.com/obsidian-nvim/obsidian.nvim)
 
 ## Installation
 
@@ -21,7 +21,7 @@ Thino is an Obsidian plugin for capturing quick, timestamped memos. This Neovim 
 {
   "hirano00o/obsidian-thino.nvim",
   dependencies = {
-    "epwalsh/obsidian.nvim",  -- Required to locate today's daily note
+    "obsidian-nvim/obsidian.nvim",  -- Required to locate today's daily note
   },
   opts = {},
 }
@@ -32,7 +32,7 @@ Thino is an Obsidian plugin for capturing quick, timestamped memos. This Neovim 
 ```lua
 use {
   "hirano00o/obsidian-thino.nvim",
-  requires = { "epwalsh/obsidian.nvim" },
+  requires = { "obsidian-nvim/obsidian.nvim" },
   config = function()
     require("obsidian-thino").setup()
   end,
@@ -43,7 +43,7 @@ use {
 
 | Plugin | Purpose |
 |--------|---------|
-| [obsidian.nvim](https://github.com/epwalsh/obsidian.nvim) | Resolves the path to today's daily note |
+| [obsidian.nvim](https://github.com/obsidian-nvim/obsidian.nvim) | Resolves the path to today's daily note |
 
 ## Usage
 
